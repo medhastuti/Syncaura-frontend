@@ -24,7 +24,6 @@ FRONTEND/
 │   ├── assets/            # Icons, images, and other static assets
 │   │
 │   ├── components/        # Reusable UI components
-│   │   ├── Admin/         # Admin-related components
 │   │   ├── auth/          # Authentication components (SignIn, SignUp)
 │   │   ├── dashboard/     # Admin dashboard components
 │   │   └── userdashboard/ # User dashboard components
@@ -33,7 +32,6 @@ FRONTEND/
 │   │   └── MainLayout.jsx # Common layout wrapper (Header, Sidebar)
 │   │
 │   ├── pages/             # Page-level components
-│   │   ├── AdminDashboard.jsx
 │   │   ├── Attendance.jsx
 │   │   ├── Chat.jsx
 │   │   ├── Dashboard.jsx
@@ -61,6 +59,11 @@ FRONTEND/
 ```
 
 ---
+
+## Routes
+* "/" => **Normal dashboard**
+* "/sign-up" => **Sign-Up**
+* "/user-dashboard" => **User dashboard**
 
 ## 🧩 Features Overview
 

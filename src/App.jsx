@@ -11,7 +11,6 @@ import UserDashboard from "./pages/UserDashboard";
 import Dashboard from "./pages/Dashboard";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import AdminDashboard from "./pages/AdminDashboard";
 
 export default function App() {
   return (
@@ -20,7 +19,7 @@ export default function App() {
         <Route path="/" element={<Dashboard/>}/>
         <Route path="/sign-in" element={<SignIn/>}/>
         <Route path="/sign-up" element={<SignUp/>}/>
-        <Route path="/admin-dashboard" element={<AdminDashboard/>}/>
+        {/* <Route path="/admin-dashboard" element={<AdminDashboard/>}/> */}
         <Route path="/user-dashboard" element={<MainLayout ><UserDashboard /></MainLayout> }/>
           {/* <Route index element={} /> */}
           <Route path="/projects" element={<MainLayout ><Projects /></MainLayout> } />
