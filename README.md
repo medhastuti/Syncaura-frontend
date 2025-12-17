@@ -1,16 +1,201 @@
-# React + Vite
+Syncaura Frontend 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Syncaura Frontend is a modern, scalable React-based frontend application built using Vite and Tailwind CSS.
+It provides an intuitive dashboard-driven user interface for managing projects, tasks, chats, attendance, meetings, and more.
 
-Currently, two official plugins are available:
+The project follows a clean modular architecture with reusable components, layouts, and pages to ensure maintainability and smooth team collaboration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📁 Repository Structure
+FRONTEND/
+│
+├── public/
+│   ├── background/          # Background images
+│   ├── fonts/               # Custom fonts
+│   ├── images/              # Static images
+│   └── vite.svg
+│
+├── src/
+│   ├── assets/              # Icons, images, static assets
+│   │
+│   ├── components/          # Reusable UI components
+│   │   ├── Admin/
+│   │   ├── auth/
+│   │   ├── dashboard/
+│   │   └── userdashboard/
+│   │
+│   ├── layouts/             # Layout components
+│   │   └── MainLayout.jsx
+│   │
+│   ├── pages/               # Application pages
+│   │   ├── AdminDashboard.jsx
+│   │   ├── App.css
+│   │   ├── Attendance.jsx
+│   │   ├── Chat.jsx
+│   │   ├── Dashboard.jsx
+│   │   ├── Documents.jsx
+│   │   ├── index.css
+│   │   ├── Meetings.jsx
+│   │   ├── Projects.jsx
+│   │   ├── SignIn.jsx
+│   │   ├── SignUp.jsx
+│   │   ├── Tasks.jsx
+│   │   └── UserDashboard.jsx
+│   │
+│   ├── store/               # Global state management
+│   │   └── useThemeStore.js
+│   │
+│   ├── App.jsx              # Root component
+│   ├── main.jsx             # Application entry point
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
 
-## React Compiler
+🧩 Features Overview
+📊 Dashboard
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Admin and User dashboards
 
-## Expanding the ESLint configuration
+Statistics cards
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Charts using Chart.js
+
+Responsive grid layouts
+
+🔐 Authentication
+
+Sign In & Sign Up pages
+
+Role-based UI (Admin / User)
+
+Integration-ready for JWT auth
+
+💬 Chat Module
+
+Real-time chat UI
+
+Designed for Socket.IO backend integration
+
+📁 Project & Task Management
+
+Projects listing
+
+Task tracking
+
+Clean and intuitive UI
+
+📅 Attendance & Meetings
+
+Attendance tracking UI
+
+Meetings management interface
+
+🌗 Theme Support
+
+Light / Dark mode
+
+Global theme state using custom store
+
+CSS variables + Tailwind integration
+
+🛠 Tech Stack
+
+React.js
+
+Vite
+
+Tailwind CSS
+
+Chart.js
+
+React Chart.js 2
+
+JavaScript (ES6+)
+
+HTML5 & CSS3
+
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/your-org/syncaura-frontend.git
+cd FRONTEND
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Run the Development Server
+npm run dev
+
+
+The app will run at:
+
+http://localhost:5173
+
+🔗 Backend Integration
+
+This frontend is designed to work with the Syncaura Backend Mono-repo, including:
+
+Auth API
+
+CRUD Services
+
+Leave Management
+
+Real-time Chat (Socket.IO)
+
+API endpoints can be connected using environment variables.
+
+👥 Team Collaboration Rules
+
+Single Git repository for frontend
+
+Follow folder-based responsibility
+
+Do NOT commit node_modules
+
+Pull latest changes before pushing:
+
+git pull origin main
+
+
+Keep components reusable and modular
+
+🚫 Ignored Files
+
+The following files are excluded via .gitignore:
+
+node_modules/
+
+dist/
+
+.env
+
+IDE config files
+
+📌 Future Enhancements
+
+API integration with backend services
+
+Protected routes & role-based access
+
+Mobile-first UI improvements
+
+Performance optimization
+
+PWA support
+
+Unit & integration testing
+
+📄 License
+
+This project is developed for educational and internal purposes.
+License information can be added if required.
+
+🤝 Contributors
+
+Developed and maintained by the Syncaura Frontend Team.
+
+⭐ If you find this project useful, consider starring the repository!
