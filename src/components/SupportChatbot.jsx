@@ -146,7 +146,7 @@ export default function SupportChatbot() {
 
     return (
         <>
-            <div className="fixed bottom-28 right-10 z-50 flex items-center gap-3">
+            <div className="fixed bottom-28 right-10 z-30 flex items-center gap-3">
 
                 {/* Tooltip bubble */}
                 <motion.div

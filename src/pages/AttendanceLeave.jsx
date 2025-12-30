@@ -290,7 +290,7 @@ const AttendanceLeave = () => {
       {openModel && (
         <LeaveModel
           onClose={() => setOpenModel(false)}
-          setHistory={setAllLeaveHistory}
+          setHistory={setFilterLeaveHistory}
         />
       )}
     </div>
