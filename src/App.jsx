@@ -16,12 +16,18 @@ import MobileSidebar from "./components/MobileSidebar";
 import Sidebar from "./components/userdashboard/Sidebar/Sidebar";
 import Complaints from "./pages/Complaints";
 import AttendanceLeave from "./pages/AttendanceLeave";
+import Notice from "./pages/Notice";
+import Settings from "./pages/Settings";
+import Admin from "./pages/Admin";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/normal-dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
 
@@ -34,18 +40,6 @@ export default function App() {
                 <UserDashboard />
               </div>
             </MainLayout>
-          }
-        />
-        <Route
-          path="/dummy"
-          element={
-            <div className="flex min-h-screen">
-              <MobileSidebar />
-              <main className="flex-1 p-6">
-                Content here
-              </main>
-            </div>
-
           }
         />
         <Route
@@ -88,6 +82,22 @@ export default function App() {
             </MainLayout>
           }
         />
+        <Route
+          path="/notice"
+          element={
+            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+              <Notice />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/documents"
+          element={
+            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+              <Documents />
+            </MainLayout>
+          }
+        />
 
         <Route
           path="/complaints"
@@ -98,13 +108,14 @@ export default function App() {
           }
         />
         <Route
-          path="/documents"
+          path="/settings"
           element={
-            <MainLayout TopbarComponent={Topbar}>
-              <Documents />
+            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+              <Settings />
             </MainLayout>
           }
         />
+        
       </Routes>
     </BrowserRouter>
   );

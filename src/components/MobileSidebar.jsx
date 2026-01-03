@@ -23,7 +23,7 @@ import { useSelector } from "react-redux";
 
 
 const menuItems = [
-    { label: "Dashboard", icon: LayoutDashboard, path: "/", count: 0 },
+    { label: "Dashboard", icon: LayoutDashboard, path: "/user-dashboard", count: 0 },
     { label: "Projects", icon: Folder, path: "/projects", count: 0 },
     { label: "Chat", icon: MessageCircle, path: "/chat", count: 10 },
     { label: "Meetings", icon: Calendar, path: "/meetings", count: 2 },

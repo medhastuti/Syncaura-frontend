@@ -43,21 +43,25 @@ FRONTEND/
 │   │
 │   ├── pages/             # Page-level components
 │   │   ├── Attendance.jsx
+│   │   ├── Admin.jsx
 │   │   ├── Chat.jsx
 │   │   ├── Complaints.jsx
 │   │   ├── Dashboard.jsx
 │   │   ├── Documents.jsx
+│   │   ├── Home.jsx
 │   │   ├── Meetings.jsx
+│   │   ├── Notice.jsx
 │   │   ├── Projects.jsx
+│   │   ├── Settings.jsx
 │   │   ├── SignIn.jsx
 │   │   ├── SignUp.jsx
 │   │   ├── Tasks.jsx
 │   │   └── UserDashboard.jsx
 │   │
 │   ├── redux/             # Global state management
-│   │   ├── slices # Theme (dark/light) state store
-│   │   │   └── themeSlice.js
-│   │   └── store.js
+│   │   ├── slices 
+│   │   │   └── themeSlice.js  # Theme (dark/light) Slice 
+│   │   └── store.js # reduc store store
 │   │
 │   ├── App.jsx            # Root React component
 │   └── main.jsx           # Application entry point
@@ -74,7 +78,7 @@ FRONTEND/
 ---
 
 ## Routes
-* "/" => **Normal dashboard Page**
+* "/normal-dashboard" => **Normal dashboard Page**
 * "/sign-up" => **Sign-Up Page**
 * "/user-dashboard" => **User dashboard Page**
 * "/meetings" => **Meeting Page**
@@ -82,7 +86,11 @@ FRONTEND/
 * "/complaints" => **Complaint Page**
 * "/projects" => **Projects Page**
 * "/attendance-leave" => **Attendance Leave Page**
-
+* "/settings" => **Setting Page**
+* "/" => **Home Page**
+* "/notice" => **Notice Page**
+* "/settings" => **Setting Page**
+* "/admin" => **Admin Page**
 
 ## 🧩 Features Overview
 
