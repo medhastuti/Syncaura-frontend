@@ -1,5 +1,4 @@
-
- import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const projectStatusData = [
   { name: "Completed", value: 65, color: "#6366F1" },
@@ -11,23 +10,7 @@ const projectStatusData = [
 const productivityData = [20, 35, 28, 55, 48, 70];
 
 const AdminTable = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const html = document.documentElement;
-
-    // Initial check
-    setIsDarkMode(html.classList.contains("dark"));
-
-    // Observe changes to html class
-    const observer = new MutationObserver(() => {
-      setIsDarkMode(html.classList.contains("dark"));
-    });
-
-    observer.observe(html, { attributes: true, attributeFilter: ["class"] });
-
-    return () => observer.disconnect();
-  }, []);
+  const isDarkMode = useSelector((state) => state.theme.isDark);
 
   const maxValue = Math.max(...productivityData);
 
@@ -55,7 +38,7 @@ const AdminTable = () => {
 
   return (
     <div className="ml-9 grid grid-cols-1 lg:grid-cols-2 gap-13">
-      {/* ================= PROJECT STATUS ================= */}
+      {/* PROJECT STATUS */}
       <div style={cardStyle}>
         <h3 style={{ color: valueColor, fontWeight: 600, marginBottom: "1.5rem" }}>
           Project Status
@@ -64,12 +47,10 @@ const AdminTable = () => {
         <div className="flex items-end justify-between h-[220px] px-15 mt-5">
           {projectStatusData.map((item) => (
             <div key={item.name} className="flex flex-col items-center gap-3">
-              {/* EMPTY BAR */}
               <div
                 className="relative rounded-[3px]"
                 style={{ width: "36px", height: "145px", backgroundColor: barEmptyColor }}
               >
-                {/* FILLED BAR */}
                 <div
                   className="absolute bottom-0 left-0 right-0 rounded-[6px]"
                   style={{
@@ -90,7 +71,7 @@ const AdminTable = () => {
         </div>
       </div>
 
-      {/* ================= TEAM PRODUCTIVITY ================= */}
+      {/* TEAM PRODUCTIVITY */}
       <div style={cardStyle}>
         <div className="flex items-center justify-between mb-4">
           <h3 style={{ color: valueColor, fontWeight: 600, fontSize: "0.875rem" }}>
@@ -100,14 +81,12 @@ const AdminTable = () => {
         </div>
 
         <div className="relative h-[220px]">
-          {/* GRID LINES */}
           <div className="absolute inset-0 flex flex-col justify-between">
             <div className="h-px" style={{ backgroundColor: gridLineColor }} />
             <div className="h-px" style={{ backgroundColor: gridLineColor }} />
             <div className="h-px" style={{ backgroundColor: gridLineColor }} />
           </div>
 
-          {/* LINE GRAPH */}
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
             <polyline
               points={points}

@@ -1,4 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import {
   LayoutDashboard,
   Folder,
@@ -13,9 +14,8 @@ import {
   Settings,
 } from "lucide-react";
 
-// Import your new icons
-import { FiUmbrella } from "react-icons/fi"; // Leave icon
-import { BiBarChartSquare } from "react-icons/bi"; // Performance icon
+import { FiUmbrella } from "react-icons/fi";
+import { BiBarChartSquare } from "react-icons/bi";
 
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/" },
@@ -27,13 +27,14 @@ const menuItems = [
   { icon: AlertTriangle, label: "Competitors", path: "/competitors" },
   { icon: Megaphone, label: "Notice", path: "/notice" },
   { icon: Clock, label: "Attendance", path: "/attendance" },
-  { icon: FiUmbrella, label: "Leave", path: "/leave" }, // updated icon
-  { icon: BiBarChartSquare, label: "Performance", path: "/performance" }, // updated icon
+  { icon: FiUmbrella, label: "Leave", path: "/leave" },
+  { icon: BiBarChartSquare, label: "Performance", path: "/performance" },
   { icon: Link, label: "Integrations", path: "/integrations" },
   { icon: Settings, label: "Settings", path: "/settings" },
 ];
 
-const AdminSidebar = ({ isDark }) => {
+const AdminSidebar = () => {
+  const isDark = useSelector((state) => state.theme.isDark);
   const location = useLocation();
 
   return (

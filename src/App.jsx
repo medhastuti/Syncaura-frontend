@@ -18,6 +18,8 @@ import Notice from "./pages/Notice";
 import Settings from "./pages/Settings";
 import Admin from "./pages/Admin";
 import Home from "./pages/Home";
+import AdminSidebar from "./components/admin/AdminSidebar";
+import AdminHeader from "./components/admin/AdminHeader";
 
 export default function App() {
   return (
@@ -25,7 +27,17 @@ export default function App() {
       <Routes>
         <Route path="/normal-dashboard" element={<Dashboard />} />
         <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route
+          path="/admin"
+          element={
+            <MainLayout
+              SideBar={AdminSidebar}
+              TopbarComponent={AdminHeader}
+            >
+              <Admin />
+            </MainLayout>
+          }
+        />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
 

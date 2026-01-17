@@ -1,13 +1,14 @@
 import { Search, Bell, User, Sun, Moon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleThemeMethod } from "../../redux/slices/themeSlice";
 
-const AdminHeader = ({ isDark, setIsDark }) => {
-  
-  useEffect(() => {
-    const root = document.documentElement;
-    if (isDark) root.classList.add("dark");
-    else root.classList.remove("dark");
-  }, [isDark]);
+const AdminHeader = () => {
+  const isDark = useSelector((state) => state.theme.isDark);
+  const dispatch = useDispatch();
+
+  const toggleTheme = () => {
+    dispatch(toggleThemeMethod());
+  };
 
   return (
     <header
@@ -37,7 +38,7 @@ const AdminHeader = ({ isDark, setIsDark }) => {
       <div className="flex items-center gap-5">
         {/* Theme toggle */}
         <button
-          onClick={() => setIsDark(!isDark)}
+          onClick={toggleTheme}
           className="relative w-[50px] h-[50px]"
         >
           <div className="absolute inset-0 rounded-full bg-white flex items-center justify-center">

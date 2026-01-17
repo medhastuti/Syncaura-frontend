@@ -1,11 +1,7 @@
-import { useState, useEffect } from "react";
-import { RefreshCw } from "lucide-react";
-
-import AdminSidebar from "../components/admin/AdminSidebar";
-import AdminHeader from "../components/admin/AdminHeader";
 import AdminStats from "../components/admin/AdminStats";
 import AdminTable from "../components/admin/AdminTable";
 import { Clock } from "lucide-react";
+import { useSelector } from "react-redux";
 
 const DashboardHeader = ({ isDark }) => {
   return (
@@ -50,16 +46,7 @@ const DashboardHeader = ({ isDark }) => {
 };
 
 const Admin = () => {
-  // Initialize theme from localStorage
-  const [isDark, setIsDark] = useState(() => {
-    const savedTheme = localStorage.getItem("admin-dark-mode");
-    return savedTheme === "true";
-  });
-
-  // Update localStorage whenever theme changes
-  useEffect(() => {
-    localStorage.setItem("admin-dark-mode", isDark);
-  }, [isDark]);
+  const isDark = useSelector((state) => state.theme.isDark);
 
   return (
     <div
@@ -67,28 +54,19 @@ const Admin = () => {
         isDark ? "bg-[#0B1220] text-white" : "bg-white text-gray-900"
       }`}
     >
-      {/* Sidebar */}
-      <AdminSidebar isDark={isDark} />
+      {/* Dashboard content */}
+      <main className="flex-1 p-6">
+        {/* Dashboard Overview */}
+        <DashboardHeader isDark={isDark} />
 
-      {/* Main content */}
-      <div className="flex-1 flex flex-col">
-        {/* Header */}
-        <AdminHeader isDark={isDark} setIsDark={setIsDark} />
+        {/* Stats Cards */}
+        <div className="mb-6">
+          <AdminStats isDark={isDark} />
+        </div>
 
-        {/* Dashboard content */}
-        <main className="flex-1 p-6">
-          {/* Dashboard Overview */}
-          <DashboardHeader isDark={isDark} />
-
-          {/* Stats Cards */}
-          <div className="mb-6">
-            <AdminStats isDark={isDark} />
-          </div>
-
-          {/* Table / Charts */}
-          <AdminTable isDark={isDark} />
-        </main>
-      </div>
+        {/* Table / Charts */}
+        <AdminTable isDark={isDark} />
+      </main>
     </div>
   );
 };
