@@ -1141,4 +1141,18 @@ export const reportsList = [
   },
 ];
 
+export const TASK_STATUS = [
+  { id: "todo", label: "To Do", count: 6, color: "#E2E8F0" },
+  { id: "progress", label: "In Progress", count: 8, color: "#1877F2" },
+  { id: "blocked", label: "Blocked", count: 4, color: "#EF4444" },
+  { id: "done", label: "Done", count: 6, color: "#22C55E" },
+];
+
+export const ANALYTICS_TASK_STATUS = [
+
+  { id: "done", label: "Done", count: "45%", color: "#22C55E" },
+  { id: "progress", label: "In Progress", count: "20%", color: "#137FEC" },
+  { id: "todo", label: "To Do", count: "28%", color: "#FACC15" },
+  { id: "blocked", label: "Blocked", count: "7%", color: "#EF4444" },
+];
 
